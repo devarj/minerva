@@ -1,0 +1,137 @@
+/* Clarence Moratal admin.css */
+html,body{
+	font-family: 'Open Sans', sans-serif;
+}
+.main-container{
+	max-width:1200px;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 1;
+}
+.admin-header{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	box-sizing:border-box;
+	z-index: 2;
+}
+.page-form-tab{
+	border: 1px solid #eaeaea;
+	padding: 20px;
+	box-sizing: border-box;
+	border-top: 0px;
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+.layout-dp-cont{
+	margin-bottom: 10px !important;
+}
+.layout-dp-cont img{
+	min-width: 100%;
+	max-height: 200px;
+	overflow: hidden;
+}
+.layout-dp-cont .uk-button{
+	width: 100%;
+	box-sizing: border-box;
+}
+.page-header{
+	border-bottom: 1px solid #EAEAEA;
+	margin-bottom: 20px;
+}
+.body-mc{
+	padding-top:40px;
+}
+.top-admin-action:hover{
+	background-color: rgba(0,0,0,0.7);
+}
+.top-admin-action{
+	z-index: 5;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.3);
+	padding: 5px 10px;
+	box-sizing: border-box;
+}
+.custom-btn-group a,.custom-btn-group button{
+	border-right: 0px;
+	border-radius: 0px;
+	margin-right: -5px;
+}
+.custom-btn-group a:first-child, .custom-btn-group button:first-child{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.custom-btn-group a:last-child, .custom-btn-group button:last-child{
+	margin-right: 0px;
+	border-right: 1px solid rgba(0,0,0,.2) !important;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.form-actions{
+	padding: 20px 10px;
+	box-sizing: border-box;
+	background-color: #F7F5F5;
+	border-top: 1px solid #EAEAEA;
+}
+.floating-btn{
+	font-style: italic;
+	position: fixed;
+	right: 0px;
+	top: 50px;
+	color: #fff;
+	z-index: 4;
+	padding: 2px 10px;
+	background-color: #989898;
+	font-size: 12px;
+}
+.floating-btn:hover{
+	text-decoration: underline;
+	color: #fff;
+}
+.page-header h1{
+	font-family: 'Open sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 25px;
+	font-weight: 600;
+	color: #008FC7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************
+UIKIT override
+**************/
+
+.uk-navbar-brand,.uk-navbar-brand:hover {
+	font-size: 18px;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: 600;
+	background-color: rgba(0,0,0,0);
+	text-shadow: none;
+}
+.uk-navbar-brand img{
+	max-width: 120px;
+}
