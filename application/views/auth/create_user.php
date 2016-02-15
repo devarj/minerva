@@ -1,46 +1,55 @@
-<h1><?php echo lang('create_user_heading');?></h1>
-<p><?php echo lang('create_user_subheading');?></p>
 
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/create_user");?>
-
-      <p>
-            <?php echo lang('create_user_fname_label', 'first_name');?> <br />
-            <?php echo form_input($first_name);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_lname_label', 'last_name');?> <br />
-            <?php echo form_input($last_name);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_company_label', 'company');?> <br />
-            <?php echo form_input($company);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_email_label', 'email');?> <br />
-            <?php echo form_input($email);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_phone_label', 'phone');?> <br />
-            <?php echo form_input($phone);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_password_label', 'password');?> <br />
-            <?php echo form_input($password);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_password_confirm_label', 'password_confirm');?> <br />
-            <?php echo form_input($password_confirm);?>
-      </p>
-
-
-      <p><?php echo form_submit('submit', lang('create_user_submit_btn'));?></p>
-
-<?php echo form_close();?>
+<div class="container-fluid">
+	<div class="side-body">
+		<div class="page-title">
+			<span class="title">Create New User</span>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+			<?php
+			if(isset($message)){
+		?>
+			<div class="alert alert-danger"><?php echo $message; ?></div>
+		<?php
+			}
+		?>
+				<div class="card">
+				<form method="POST" action="<?php echo base_url('auth/create_user'); ?>">
+					<div class="card-body">
+						<div class="sub-title">First Name</div>
+						<div>
+							<input type="text" class="form-control" placeholder="First Name" name="first_name" />
+						</div>
+						<div class="sub-title">Last Name</div>
+						<div>
+							<input type="text" class="form-control" placeholder="Last Name"  name="last_name" />
+						</div>
+						<div class="sub-title">Company Name</div>
+						<div>
+							<input type="text" class="form-control" placeholder="Company"  name="company" />
+						</div>
+						<div class="sub-title">Phone</div>
+						<div>
+							<input type="text" class="form-control" placeholder="Phone"  name="phone" />
+						</div>
+						<div class="sub-title">Email</div>
+						<div>
+							<input type="text" class="form-control" placeholder="Email"  name="email" />
+						</div>
+						
+						<div class="sub-title">Password</div>
+						<div>
+							<input type="password" class="form-control" placeholder="Password"  name="password" />
+						</div>
+						<div class="sub-title">Confirm Password</div>
+						<div>
+							<input type="password" class="form-control" placeholder="Confirm Password"  name="password_confirm" />
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

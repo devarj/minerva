@@ -40,16 +40,7 @@ class Shops extends CI_Controller {
 			$this->form_validation->set_rules('hostname', 'Hostname', 'required');
 			$this->form_validation->set_rules('dbname', 'Database', 'required');
 		
-			
-			 /* $save['shopname'] = $this->input->post('shopname');
-				$save['domainname'] = $this->input->post('domainname');
-				$save['hostname'] = $this->input->post('hostname');
-				$save['dbname'] = $this->input->post('dbname');
-				$save['url'] = $this->input->post('url');
-				$save['ecomm'] = ($this->input->post('ecomm') == 'on') ? 1 : 0;
-				$save['vc'] = ($this->input->post('vc') == 'on') ? 1 : 0;
-				$save['enabled'] = ($this->input->post('enabled') == 'on') ? 1 : 0; */
-				
+	
 				$shopname 	= $this->input->post('shopname');
 				$hostname 	= $this->input->post('hostname');
 				$dbname 	= $this->input->post('dbname');
@@ -97,7 +88,6 @@ class Shops extends CI_Controller {
 				if($result){
 				#added by obey
 					//to create a DB
-					$this->shops->add_tables($save);
 					$update = array(
 					"status" => 1,
 					"shop" => $shopname,
@@ -113,7 +103,7 @@ class Shops extends CI_Controller {
 					$message = alertMessage('Shop Created!','Success');
 					$this->session->set_flashdata('message', $message);
 					//$data['domains'] = $this->shops->get_inactive_domains();
-					redirect(base_url("shops"));
+					redirect("shops");
 				}
 				else{
 					//$data['msg'] = 'Database error occured!';

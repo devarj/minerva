@@ -116,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php echo $this->session->flashdata('message'); ?>
 	
 	<span class="uk-width-1"> 
-        <img class="uk-margin-bottom logo" src="<?php echo base_url('assets/img/cpanel.png'); ?>">
+        <img class="uk-margin-bottom logo" src="http://schooldemo2.oneacademy.ph/gocart/themes/school2/assets/img/logo-1.png">
       </span> <hr/>
 	  <a href="<?php echo base_url('shops'); ?>">Shop Admin</a>
     <div class="title"><?php echo $title; ?></div class=""> 

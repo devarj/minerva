@@ -89,8 +89,8 @@ class Auth extends CI_Controller {
 				'id' => 'password',
 				'type' => 'password',
 			);
-
-			$this->_render_page('auth/login', $this->data);
+			
+			$this->load->view('auth/login', $this->data);
 		}
 	}
 
@@ -436,7 +436,7 @@ class Auth extends CI_Controller {
 
 		if ($this->form_validation->run() == true)
 		{
-			$username = strtolower($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
+			$username = strtolower($this->input->post('first_name')) . '.' . strtolower($this->input->post('last_name'));
 			$email    = strtolower($this->input->post('email'));
 			$password = $this->input->post('password');
 
@@ -796,9 +796,11 @@ class Auth extends CI_Controller {
 
 	function _render_page($view, $data=null, $render=false)
 	{
-
+		
+		$this->load->view('includes/header', $data);
+		
 		$this->viewdata = (empty($data)) ? $this->data: $data;
-
+		$this->load->view('includes/footer', $data);
 		$view_html = $this->load->view($view, $this->viewdata, $render);
 
 		if (!$render) return $view_html;

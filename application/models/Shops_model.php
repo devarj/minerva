@@ -18,11 +18,8 @@ class Shops_model extends CI_Model
 	public function addShop($data){
 		$db_name = $data['dbname'];
 		$this->db->query('CREATE DATABASE IF NOT EXISTS '.$db_name);
-		// $this->db->query('INSERT INTO '.$db_name.'.'.'banner_collections'.' SELECT banner_collections From athena');
-		// $this->db->query('SELECT admin From athena');
-			
-
 		$result = $this->db->insert($this->_table, $data);
+		$this->add_tables($data);
 		return $result;
 	}
 	
@@ -47,6 +44,7 @@ class Shops_model extends CI_Model
 	#added by obey
 	public function add_tables($save){
 		$dbname = $save['dbname'];
+		$sitename = $save['shopname'];
 		//when creating a table specify the database name then the table name
 		$sql=array(
 		"0"=>"CREATE TABLE $dbname.`admin` (
@@ -555,13 +553,7 @@ class Shops_model extends CI_Model
 			
 		"49"=>"insert  into $dbname.`folder`(`fl_id`,`fl_name`,`user_id`,`parent_id`) 
 			values 
-				(17,'apollo1	',1,0),
-				(18,'tee',1,17),
-				(19,'apollo 3',1,18),
-				(20,'apollo 4',1,19),
-				(21,'apollo 5',1,20),
-				(27,'test2',2,26),
-				(30,'asd2',2,29);",
+				(17,'apollo1	',1,0);",
 			
 		"50"=>"insert  into $dbname.`folder_files`(`up_id`,`file_name`,`raw_name`,`fl_id`) 
 			values 
@@ -597,51 +589,17 @@ class Shops_model extends CI_Model
 				
 		"56"=>"insert  into $dbname.`routes`(`id`,`slug`,`route`) 
 			values 
-				(12,'organizational-chart','cart/page/12'),
-				(13,'accomplishments','cart/page/13'),
-				(14,'office-of-the-sds','cart/page/14'),
-				(15,'curriculum-implementation','cart/page/15'),
-				(16,'sgod','cart/page/16'),
-				(17,'finance','cart/page/17'),
-				(18,'administrative','cart/page/18'),
-				(19,'legal','cart/page/19'),
-				(20,'learning-resource-management','cart/page/20'),
-				(21,'instructional-supervision','cart/page/21'),
-				(22,'elementary','cart/page/22'),
-				(23,'high-school','cart/page/23'),
-				(24,'cashier-section','cart/page/24'),
-				(25,'hrm-section','cart/page/25'),
-				(26,'gamer','cart/page/26'),
-				(27,'list','cart/page/27'),
-				(28,'redactor','cart/page/28'),
-				(30,'page2','cart/page/2'),
-				(32,'sub-1','cart/page/4'),
-				(35,'sub-3','cart/page/7'),
-				(38,'gallery','cart/page/10'),
-				(39,'gamer-never-dies','cart/page/11'),
-				(43,'try','cart/page/15'),
-				(62,'news','cart/page/19'),
-				(63,'gallery1','cart/page/20'),
-				(65,'listing','cart/page/22'),
-				(69,'game-over1','cart/page/26'),
-				(92,'try-try','cart/page/49'),
-				(94,'clarence','cart/page/51'),
-				(95,'panel','cart/page/52'),
-				(96,'test','cart/page/53');",
+				(12,'organizational-chart','cart/page/12');",
 			
 		"57"=>"insert  into $dbname.`search`(`code`,`term`) 
 			values 
-				('0e3efaaad6de051028e5e4dda3e7927d','tte'),
-				('11b7cb542165b67425458e692774f521','{\"start_date\":\"2015-07-03\",\"end_date\":\"2015-07-17\",\"term\":\"ds\",\"submit\":\"search\"}'),
-				('4f6f45546e7951f58d1f2bd83d32b043','{\"category_id\":\"\",\"term\":\"iphone\",\"submit\":\"search\"}'),
-				('7f81ee134e86ccf23c5460d8d9ac91cc','asfknlafkaslfakjsfas'),('b0a8b6f820479900e34d34f6b8a4af73','shoes'),
-				('c7d1e14d4042d6180f2b522e179d27de','{\"category_id\":\"\",\"term\":\"iphonde\",\"submit\":\"search\"}');",
+				('0e3efaaad6de051028e5e4dda3e7927d','tte');",
 			
 		"58"=>"insert  into $dbname.`settings`(`id`,`code`,`setting_key`,`setting`) 
 			values 
 				(1,'gocart','theme','Division 2'),
 				(2,'gocart','ssl_support','0'),
-				(3,'gocart','company_name','88DB CMS4'),
+				(3,'gocart','company_name','".$sitename."'),
 				(4,'gocart','address1','Pasig'),
 				(5,'gocart','address2','Pasig'),
 				(6,'gocart','country',''),
@@ -700,36 +658,7 @@ class Shops_model extends CI_Model
 
 		"60"=>"insert  into $dbname.`transparency_board`(`file_id`,`file_name`,`raw_name`,`year`,`full_path`,`month`,`date_created`,`order_id`) 
 			values 
-				(3,'Lorem_Ipsum5.pdf','Lorem_Ipsum5','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum5.pdf','January','2015-08-11 18:08:40',1),
-				(4,'Lorem_Ipsum56.pdf','Lorem_Ipsum56','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum56.pdf','January','2015-08-13 16:29:52',1),
-				(5,'Lorem_Ipsum57.pdf','Lorem_Ipsum57','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum57.pdf','February','2015-08-13 16:30:25',2),
-				(6,'Lorem_Ipsum59.pdf','Lorem_Ipsum59','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum59.pdf','March','2015-08-13 16:38:41',3),
-				(7,'Lorem_Ipsum9.pdf','Lorem_Ipsum9','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum9.pdf','October','2015-08-11 18:14:01',10),
-				(8,'Lorem_Ipsum53.pdf','Lorem_Ipsum53','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum53.pdf','May','2015-08-12 17:37:21',5),
-				(9,'Lorem_Ipsum11.pdf','Lorem_Ipsum11','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum11.pdf','June','2015-08-12 10:29:34',6),
-				(10,'Lorem_Ipsum13.pdf','Lorem_Ipsum13','2012','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum13.pdf','October','2015-08-12 11:54:09',10),
-				(11,'Lorem_Ipsum14.pdf','Lorem_Ipsum14','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum14.pdf','December','2015-08-12 11:57:48',12),
-				(12,'Lorem_Ipsum15.pdf','Lorem_Ipsum15','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum15.pdf','April','2015-08-12 14:42:06',4),
-				(13,'Lorem_Ipsum16.pdf','Lorem_Ipsum16','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum16.pdf','July','2015-08-12 14:42:30',7),
-				(14,'JULY_8-23,_2015_ATTENDANCE.pdf','JULY_8-23,_2015_ATTENDANCE','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/JULY_8-23,_2015_ATTENDANCE.pdf','November','2015-08-12 14:45:21',11),
-				(15,'Lorem_Ipsum58.pdf','Lorem_Ipsum58','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum58.pdf','August','2015-08-13 16:35:10',8),
-				(16,'Lorem_Ipsum20.pdf','Lorem_Ipsum20','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum20.pdf','September','2015-08-12 14:49:12',9),
-				(17,'Lorem_Ipsum27.pdf','Lorem_Ipsum27','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum27.pdf','August','2015-08-12 15:15:30',8),
-				(18,'Lorem_Ipsum28.pdf','Lorem_Ipsum28','2015','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum28.pdf','August','2015-08-12 15:16:03',8),
-				(19,'Lorem_Ipsum34.pdf','Lorem_Ipsum34','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum34.pdf','February','2015-08-12 15:52:44',2),
-				(20,'Lorem_Ipsum36.pdf','Lorem_Ipsum36','2013','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum36.pdf','March','2015-08-12 15:54:50',3),
-				(21,'Lorem_Ipsum41.pdf','Lorem_Ipsum41','2013','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum41.pdf','August','2015-08-12 16:26:56',8),
-				(22,'Lorem_Ipsum38.pdf','Lorem_Ipsum38','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum38.pdf','November','2015-08-12 15:58:15',11),
-				(23,'Lorem_Ipsum43.pdf','Lorem_Ipsum43','2013','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum43.pdf','May','2015-08-12 16:27:46',5),
-				(24,'Lorem_Ipsum44.pdf','Lorem_Ipsum44','2013','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum44.pdf','July','2015-08-12 16:28:17',7),
-				(25,'Site_Map_Variation_11.pdf','Site_Map_Variation_11','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Site_Map_Variation_11.pdf','July','2015-08-19 13:51:25',7),
-				(26,'JUNE_6-22,_2015.pdf','JUNE_6-22,_2015','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/JUNE_6-22,_2015.pdf','October','2015-08-12 17:24:33',10),
-				(27,'Lorem_Ipsum49.pdf','Lorem_Ipsum49','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum49.pdf','March','2015-08-12 17:35:53',3),
-				(28,'MAY_23-JUNE_5,_2015.pdf','MAY_23-JUNE_5,_2015','2012','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/MAY_23-JUNE_5,_2015.pdf','November','2015-08-12 17:35:23',11),
-				(29,'Lorem_Ipsum51.pdf','Lorem_Ipsum51','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum51.pdf','April','2015-08-12 17:36:53',4),
-				(30,'Lorem_Ipsum54.pdf','Lorem_Ipsum54','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum54.pdf','May','2015-08-12 17:37:36',5),
-				(31,'Lorem_Ipsum55.pdf','Lorem_Ipsum55','2016','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum55.pdf','August','2015-08-13 16:26:15',8),
-				(32,'Lorem_Ipsum60.pdf','Lorem_Ipsum60','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum60.pdf','June','2015-08-13 16:39:35',6);",			
+				(3,'Lorem_Ipsum5.pdf','Lorem_Ipsum5','2014','/var/www/html/prod/CURRENT/minerva/athena/uploads/transpa/Lorem_Ipsum5.pdf','January','2015-08-11 18:08:40',1);",			
 		
 		"61" => "CREATE TABLE $dbname.`social_media` (
 			  `social_id` int(11) NOT NULL AUTO_INCREMENT,
