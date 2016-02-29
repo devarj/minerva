@@ -24,6 +24,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div>
 							<input type="text" class="form-control" placeholder="Site Name" name="shopname" />
 						</div>
+						<div class="sub-title">Website Type</div>
+						<div>
+							<select name="web_type">
+								<option value="division">Division</option>
+								<option value="elementary">Elementary</option>
+								<option value="secondary">Secondary</option>
+							</select>
+						</div>
+						<div class="sub-title">Website Type</div>
+						<div>
+							<select name="web_type">
+								<option value="division">Division</option>
+								<option value="elementary">Elementary</option>
+								<option value="secondary">Secondary</option>
+							</select>
+						</div>
 						<div class="sub-title">Domain Name</div>
 						<div>
 							<input type="text" class="form-control" placeholder="Domain"  name="domainname" />

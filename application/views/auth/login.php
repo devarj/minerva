@@ -37,11 +37,8 @@
  <div class="uk-vertical-align uk-text-center uk-height-1-1">
     <div class=" uk-vertical-align-middle" style="width: 500px;">
       <div>
-        <img class="uk-margin-bottom" src="<?php echo base_url('assets/img/cpanel.png'); ?>"> <br/><br/>
+        <img class="uk-margin-bottom" src="<?php echo base_url('assets/img/logo.png'); ?>"> <br/><br/>
       </div>
-      <!--   <h1>CMS4 Control Panel</h1> -->
-        <div> <?php echo lang('login_subheading');?> </div>
-        <br/>
          <?php  
             $att = array(
                 'class' => 'uk-panel uk-panel-box uk-form uk-form-horizontal',
@@ -98,36 +95,6 @@
         </div>
     </div>
 </div>
-
-<!-- 
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
-
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/login");?>
-
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
-
-
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
-
-<?php echo form_close();?>
-
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p> -->
 
 <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
 <script src="<?php echo base_url('assets/js/uikit.min.js'); ?>"></script>

@@ -597,7 +597,7 @@ class Shops_model extends CI_Model
 			
 		"58"=>"insert  into $dbname.`settings`(`id`,`code`,`setting_key`,`setting`) 
 			values 
-				(1,'gocart','theme','Division 2'),
+				(1,'gocart','theme','school'),
 				(2,'gocart','ssl_support','0'),
 				(3,'gocart','company_name','".$sitename."'),
 				(4,'gocart','address1','Pasig'),
@@ -694,7 +694,11 @@ class Shops_model extends CI_Model
 				  PRIMARY KEY (`cal_id`)
 				) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;",
 		
+		"65" => "CREATE TABLE $dbname.`services` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NOT NULL , `content` TEXT NOT NULL , `date_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;",
 		
+		"66" => "CREATE TABLE $dbname.`issuances_categories` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NOT NULL , `date_submitted` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;",
+		
+		"67" => "CREATE TABLE $dbname.`issuances` ( `id` INT NOT NULL AUTO_INCREMENT , `category_id` INT(11) NOT NULL , `title` VARCHAR(100) NOT NULL , `date` VARCHAR(100) NOT NULL , `file` VARCHAR(100) NOT NULL , `view_elem` INT(1) NOT NULL , `view_second` INT(1) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;"
 		
 		//add a new query here :3
 		);
